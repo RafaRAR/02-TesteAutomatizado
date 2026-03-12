@@ -1,0 +1,26 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+    await page.goto('');
+  await page.getByRole('textbox', { name: 'Nome do Aluno' }).click();
+  await page.getByRole('textbox', { name: 'Nome do Aluno' }).fill('Ana Silva');
+  await page.getByRole('textbox', { name: 'Nome do Aluno' }).press('Tab');
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).fill('8');
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).press('Tab');
+  await page.getByRole('spinbutton', { name: 'Nota 2' }).fill('7');
+  await page.getByRole('spinbutton', { name: 'Nota 2' }).press('Tab');
+  await page.getByRole('spinbutton', { name: 'Nota 3' }).fill('9');
+  await page.getByRole('button', { name: 'Cadastrar' }).click();
+  await page.getByRole('textbox', { name: 'Nome do Aluno' }).fill('Carlos Lima');
+  await page.getByRole('textbox', { name: 'Nome do Aluno' }).press('Tab');
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).fill('5');
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).press('Tab');
+  await page.getByRole('spinbutton', { name: 'Nota 2' }).fill('4');
+  await page.getByRole('spinbutton', { name: 'Nota 2' }).press('Tab');
+  await page.getByRole('spinbutton', { name: 'Nota 3' }).fill('6');
+  await page.getByRole('button', { name: 'Cadastrar' }).click();
+  await page.getByRole('textbox', { name: 'Buscar por nome' }).click();
+  await page.getByRole('textbox', { name: 'Buscar por nome' }).fill('Ana');
+  await page.getByRole('textbox', { name: 'Buscar por nome' }).fill('');
+  await page.getByRole('button', { name: 'Excluir Carlos Lima' }).click();
+});
